@@ -2,80 +2,287 @@
 <html lang="ms">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,viewport-fit=cover">
+
   <meta name="theme-color" content="#050805">
+
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="MSABA Display">
+
   <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./icons/icon-192.png">
-  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+
+  <!-- ICON SUDAH DIBETULKAN -->
+  <link rel="icon" href="./icon-192.png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
   <title>MSABA Smart Display</title>
+
   <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;width:100%;height:100%;background:#050805;color:white;font-family:Arial,Helvetica,sans-serif}
-    body{display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .shell{width:min(92vw,760px);text-align:center;padding:28px}
-    .logo{width:min(48vw,260px);max-height:42vh;object-fit:contain}
-    h1{margin:18px 0 8px;font-size:clamp(28px,5vw,54px)}
-    p{color:#c9c9c9;font-size:clamp(15px,2vw,20px);line-height:1.5}
-    .buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-    button{border:0;border-radius:14px;padding:14px 20px;font-weight:800;font-size:16px;cursor:pointer}
-    #open{background:#16b85b;color:#fff}
-    #install{background:#e8c55d;color:#111;display:none}
-    #full{background:#222;color:#fff;border:1px solid #555}
-    .status{margin-top:18px;font-size:13px;color:#8d8d8d}
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #050805;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .shell {
+      width: min(92vw, 760px);
+      text-align: center;
+      padding: 28px;
+    }
+
+    .logo {
+      width: min(48vw, 260px);
+      max-height: 42vh;
+      object-fit: contain;
+    }
+
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(28px, 5vw, 54px);
+    }
+
+    p {
+      color: #c9c9c9;
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #open {
+      background: #16b85b;
+      color: #fff;
+    }
+
+    #install {
+      background: #e8c55d;
+      color: #111;
+      display: none;
+    }
+
+    #full {
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    .status {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #8d8d8d;
+    }
   </style>
 </head>
+
 <body>
+
   <main class="shell">
-    <img class="logo" src="./icons/icon-512.png" alt="MSABA">
+
+    <!-- LOGO SUDAH DIBETULKAN -->
+    <img
+      class="logo"
+      src="./icon-512.png"
+      alt="MSABA"
+    >
+
     <h1>MSABA SMART DISPLAY</h1>
-    <p>Masjid Saidina Abu Bakar As-Siddiq, Bangsar<br>Smart Display App</p>
+
+    <p>
+      Masjid Saidina Abu Bakar As-Siddiq, Bangsar
+      <br>
+      Smart Display App
+    </p>
+
     <div class="buttons">
-      <button id="open">BUKA SMART DISPLAY</button>
-      <button id="install">INSTALL APP</button>
-      <button id="full">FULLSCREEN</button>
+
+      <button id="open">
+        BUKA SMART DISPLAY
+      </button>
+
+      <button id="install">
+        INSTALL APP
+      </button>
+
+      <button id="full">
+        FULLSCREEN
+      </button>
+
     </div>
-    <div class="status" id="status">Sedia</div>
+
+    <div class="status" id="status">
+      Sedia
+    </div>
+
   </main>
+
+
 <script>
-const DISPLAY_URL = 'https://script.google.com/macros/s/AKfycbyPomsJrKK3XYeaigyLI_y5MFHiR1EiK_wx5pKSw4GDkKLv-NFEnBHG00RfQEEjLvq8/exec';
-const statusEl = document.getElementById('status');
 
-document.getElementById('open').addEventListener('click', () => {
-  statusEl.textContent = 'Membuka MSABA Smart Display...';
-  window.location.href = DISPLAY_URL;
+const DISPLAY_URL =
+'https://script.google.com/macros/s/AKfycbyPomsJrKK3XYeaigyLI_y5MFHiR1EiK_wx5pKSw4GDkKLv-NFEnBHG00RfQEEjLvq8/exec';
+
+
+const statusEl =
+document.getElementById('status');
+
+
+/* =========================
+   BUKA SMART DISPLAY
+========================= */
+
+document
+.getElementById('open')
+.addEventListener('click', () => {
+
+  statusEl.textContent =
+  'Membuka MSABA Smart Display...';
+
+  window.location.href =
+  DISPLAY_URL;
+
 });
 
-document.getElementById('full').addEventListener('click', async () => {
+
+/* =========================
+   FULLSCREEN
+========================= */
+
+document
+.getElementById('full')
+.addEventListener('click', async () => {
+
   try {
-    if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
-    else await document.exitFullscreen();
+
+    if (!document.fullscreenElement) {
+
+      await document.documentElement.requestFullscreen();
+
+    } else {
+
+      await document.exitFullscreen();
+
+    }
+
   } catch(e) {
-    statusEl.textContent = 'Fullscreen bergantung pada sokongan browser/peranti.';
+
+    statusEl.textContent =
+    'Fullscreen bergantung pada sokongan browser/peranti.';
+
   }
+
 });
+
+
+/* =========================
+   INSTALL PWA
+========================= */
 
 let deferredPrompt = null;
-const installBtn = document.getElementById('install');
-window.addEventListener('beforeinstallprompt', e => {
+
+const installBtn =
+document.getElementById('install');
+
+
+window.addEventListener(
+'beforeinstallprompt',
+e => {
+
   e.preventDefault();
+
   deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
-});
-installBtn.addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  await deferredPrompt.userChoice;
-  deferredPrompt = null;
-  installBtn.style.display = 'none';
+
+  installBtn.style.display =
+  'inline-block';
+
 });
 
+
+installBtn.addEventListener(
+'click',
+async () => {
+
+  if (!deferredPrompt)
+    return;
+
+  deferredPrompt.prompt();
+
+  await deferredPrompt.userChoice;
+
+  deferredPrompt = null;
+
+  installBtn.style.display =
+  'none';
+
+});
+
+
+/* =========================
+   SERVICE WORKER
+========================= */
+
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js'));
+
+  window.addEventListener(
+  'load',
+  () => {
+
+    navigator.serviceWorker
+    .register('./service-worker.js')
+    .then(() => {
+
+      console.log(
+      'MSABA Service Worker Active'
+      );
+
+    })
+    .catch(error => {
+
+      console.error(
+      'Service Worker Error:',
+      error
+      );
+
+    });
+
+  });
+
 }
+
 </script>
+
 </body>
 </html>
