@@ -1,0 +1,15 @@
+{
+  "name": "MSABA Smart Display",
+  "short_name": "MSABA Display",
+  "description": "Smart Display Masjid Saidina Abu Bakar As-Siddiq, Bangsar",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#050805",
+  "theme_color": "#050805",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
