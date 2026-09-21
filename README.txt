@@ -1,27 +1,11 @@
-MSABA SMART DISPLAY V4 - APP SHELL
+MSABA SMART DISPLAY V4.1 - DIRECT LAUNCH / KIOSK
 
-TARGET SMART DISPLAY:
-https://script.google.com/macros/s/AKfycbyPomsJrKK3XYeaigyLI_y5MFHiR1EiK_wx5pKSw4GDkKLv-NFEnBHG00RfQEEjLvq8/exec
+1. APPS SCRIPT: gantikan fungsi doGet() lama SAHAJA dengan APPS-SCRIPT-doGet-PATCH.gs.
+2. Save. Deploy > Manage deployments > Edit > New version > Deploy.
+3. GITHUB: replace/upload index.html, manifest.json, service-worker.js, offline.html, icon-192.png, icon-512.png di ROOT.
+4. Commit dan tunggu GitHub Pages deploy.
+5. Tutup app lama. Buka GitHub Pages dan Ctrl+Shift+R.
+6. Jika app terpasang masih cache versi lama, tutup/buka semula; jika perlu uninstall dan install semula.
 
-FAIL:
-- index.html
-- manifest.json
-- service-worker.js
-- offline.html
-- ./icon-192.png
-- ./icon-512.png
-
-CARA HOST PALING MUDAH (GITHUB PAGES):
-1. Buat repository baru, contoh: msaba-smart-display.
-2. Upload SEMUA kandungan folder ini ke root repository.
-3. Settings > Pages.
-4. Source: Deploy from a branch.
-5. Branch: main / root.
-6. Save dan tunggu GitHub Pages URL keluar.
-7. Buka URL Pages menggunakan Chrome/Edge.
-8. Tekan INSTALL APP jika butang tersedia, atau menu browser > Install app/Add to Home screen.
-9. Bila app dibuka, tekan BUKA SMART DISPLAY.
-
-NOTA:
-App shell/PWA ini tidak cuba menyalin google.script.run keluar dari Apps Script.
-Paparan Smart Display sebenar kekal dijalankan oleh deployment Apps Script asal supaya fungsi Google Sheets, Drive, audio dan scheduler kekal serasi.
+V4.1 mengekalkan app pada domain GitHub dan memuatkan Apps Script dalam iframe. Ini mengelakkan redirect ke script.google.com yang menyebabkan external-site bar.
+Target: https://script.google.com/macros/s/AKfycbyPomsJrKK3XYeaigyLI_y5MFHiR1EiK_wx5pKSw4GDkKLv-NFEnBHG00RfQEEjLvq8/exec
